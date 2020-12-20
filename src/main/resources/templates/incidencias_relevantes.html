@@ -1,0 +1,111 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<title>GDM - Incidencias relevantes</title>
+
+<style>
+.modal-dialog {
+	width: max-content !important;
+}
+</style>
+</head>
+<!-- INSPIRINA -->
+<head th:insert="common/includes/includes-inspirina::headFragment"></head>
+<head>
+<script src="js/app/incidencias_relevantes.js"></script>
+<script src="js/app/general.js"></script>
+<script src="js/app/dycec_js.js"></script>
+<script type="text/javascript">	
+	var semMax = "[[${session.max_semana}]]";
+	var mesMax = "[[${session.max_mes}]]";
+	var userName = "[[${session.userName}]]";
+	var cargo = "[[${session.area}]]";
+	var matricula = "[[${session.matricula}]]";
+	var urlTotal ="[[${#httpServletRequest.requestURL}]]".replace("incidencias","");
+	$( document ).ready(function() {
+		incidenciasRelevantes.s_contextPath = "${pageContext.request.contextPath}";
+});	
+</script>
+</head>
+
+
+<body class="fixed-sidebar fixed-nav md-skin pace-done" landing-scrollspy id="page-top">
+
+	<div class="pace pace-inactive">
+		<div class="pace-progress" data-progress-text="100%" data-progress="99"
+			style="transform: translate3d(100%, 0px, 0px);">
+			<div class="pace-progress-inner"></div>
+		</div>
+		<div class="pace-activity"></div>
+	</div>
+
+<!-- WRAPPER -->
+	<div id="wrapper"
+		th:insert="common/menus/menu-lateral::menuLateralFragment">
+		<!-- MENU - LATERAL -->
+	</div>
+
+		<!-- PAGE WRAPPER -->
+	<div id="page-wrapper" class="gray-bg">
+
+
+	
+		<nav th:insert="common/menus/menu-superior::menuSuperiorFragment">
+		</nav>
+
+
+		<!-- WRAPPER CONTENT -->
+		<div class="wrapper wrapper-content animated fadeInRight">
+			<div class="tabs-container">
+				<ul class="nav nav-tabs" role="tablist">
+					<li id="pestana1" class="active"><a class="nav-link active"
+						data-toggle="tab"
+						th:onclick="|incidenciasRelevantes.volverAlistado('null')|"
+						href="#tab-1">Incidencias relevantes</a></li>
+					<li id="pestana2"><a id="enlacePestana2" class="nav-link"
+						data-toggle="tab" href="#tab-2">Detalle/añadir</a></li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" id="tab-1" class="tab-pane active">
+
+						<div
+							th:insert="incidencias_relevantes_buscador_listado::buscadorIncidenciasRelevantes"></div>
+					</div>
+					<div role="tabpanel" id="tab-2" class="tab-pane">
+
+						<div
+							th:insert="incidencias_relevantes_ver_editar::verEditarIncidenciasRelevantes"></div>
+					</div>
+
+				</div>
+			</div>
+			<!-- FIN CONTENIDO -->
+		</div>
+	</div>
+	<!-- FIN CAJA TABLA -->
+
+	<!-- PAGE WRAPPER -->
+
+
+<!-- FIN WRAPPER -->
+
+
+<!-- JS -->
+<script type="text/javascript">
+	var urlTotal ="[[${#httpServletRequest.requestURL}]]".replace("acciones_relevantes","");
+	var semMax = "[[${session.max_semana}]]";
+	var mesMax = "[[${session.max_mes}]]";
+	$(document).ready(function() {
+		
+		
+
+	});
+</script>
+
+</body>
+<!-- BODY -->
+
+</html>
