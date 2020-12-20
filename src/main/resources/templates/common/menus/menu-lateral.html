@@ -1,0 +1,113 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- MENÚ -->
+<nav class="navbar-default navbar-static-side" th:fragment="menuLateralFragment" role="navigation">
+	
+		<div class="sidebar-collapse"
+			style="overflow: scroll; width: auto; height: 100%;">
+
+			<!-- LISTADO MENÚ IZQ -->
+			<ul class="nav metismenu" id="side-menu">
+				<!-- USER -->
+				<li class="nav-header" style="background-color: #2593B5;">
+					<div class="profile-element dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span
+							class="clear"> <span class="block m-t-xs">
+							 <strong th:text="*{usuario.nombre}" class="font-bold">
+							 </strong>
+							 <strong th:text="*{usuario.apellido_1}" class="font-bold">
+							</strong> <b class="caret"></b>
+							</span>
+							 <span class="text-muted text-xs block" th:text="*{usuario.matricula}">
+							</span> 
+						</span>
+						</a>
+						<ul class="animated fadeInRight m-t-xs dropdown-menu">
+							<li class="disabled"><a href="#/app/profile">Profile</a></li>
+							<li class="disabled"><a href="#/app/contacts">Contacts</a></li>
+							<li class="disabled"><a href="#/mailbox/inbox">Mailbox</a></li>
+							<li class="divider"></li>
+							<li><a href="javascript:void(0)"
+								th:onclick="|closeSession();return false;|">Salir</a></li>
+						</ul>
+					</div>
+					<div class="logo-element">IN+</div>
+				</li>
+				<!-- VISTAS -->
+				<!-- <li> ó <li class="active">, para que se pinte en negrita -->
+				<!-- con tags Struts -->
+				
+				<!-- url actual timeleaf ${#httpServletRequest.requestURI} -->
+				
+				
+				<li id="idMenuIncidencias" th:class="${#strings.contains(#httpServletRequest.requestURI, 'incidencias')} ? active : ''">
+					<a th:href="@{/incidencias}"> <i class="fa fa-table"></i> <span
+						class="nav-label" th:onclick="|general.conservaLateral()|">Incidencias</span> <!--<span class="fa arrow"></span>-->
+					</a> 
+				</li>
+
+				<li id="idMenuAcciones"
+					th:class="${#strings.contains(#httpServletRequest.requestURI, 'acciones')} ? active : ''">
+					<a th:href="@{/acciones_relevantes}"> <i class="fa fa-table"></i> <span
+						class="nav-label" th:onclick="|general.conservaLateral()|">Acciones</span> <!--<span class="fa arrow"></span>-->
+					</a> 
+				</li>
+
+				<li id="idMenuComentarios"
+					th:class="${#strings.contains(#httpServletRequest.requestURI, 'comentarios')} ? active : ''">
+					<a th:href="@{/comentarios}"> <i class="fa fa-table"></i> <span
+						class="nav-label" th:onclick="|general.conservaLateral()|">Comentarios</span> <!--<span class="fa arrow"></span>-->
+					</a> 
+				</li>
+				<li id="idMenuRegularizaciones"
+					th:class="${#strings.contains(#httpServletRequest.requestURI, 'regularizaciones')} ? active : ''">
+					<a th:href="@{/regularizaciones}"> <i class="fa fa-table"></i> <span
+						class="nav-label" th:onclick="|general.conservaLateral()|">Regularizaciones</span> <!--<span class="fa arrow"></span>-->
+					</a> 
+				</li>
+			</ul>
+			<!-- FIN VISTAS-->				
+			<!-- FIN LISTADO MENÚ IZQ -->
+
+			<!-- SELECT ID SEMANA -->
+			<!-- Verificar con onchange el cambio de semana con ajax -->
+			<div class="row">
+				<div id="selectMesSemana" class="col-sm-12">
+					<label id="labelselectIdSemana" class="col-sm-12 col-form-label">Periodo</label>
+					 <select id ="idsemana" class="form-control m-b" name="account">					
+						<option th:each="n : ${#numbers.sequence(1,session.max_semana)}" th:value="${n}" th:text="${n}"/>
+						
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<label class="col-sm-12 col-form-label">Tipo Periodo</label>
+					 <select id="tipoBusqueda" class="form-control m-b" name="account"  th:onChange="|general.cambioSelectorMesSemana(${session.max_mes},${session.max_semana})|">
+						<option checked="true">SEMANAL</option>
+						<option>MENSUAL</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<label class="col-sm-12 col-form-label">Año</label>
+					 <select id="annioBusqueda" th:onchange="|general.cambioSelectorMesSemana(${session.max_mes},${session.max_semana})|" class="form-control m-b" name="account">
+						<option>2020</option>
+						<option>2019</option>
+						<option>2018</option>
+						<option>2017</option>
+						<option>2016</option>
+						<option>2015</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="slimScrollBar"
+			style="background: rgb(0, 0, 0); width: 0px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 515px;"></div>
+		<div class="slimScrollRail"
+			style="width: 0px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
+		</div>
+	</div>
+</nav>
+
+

@@ -1,0 +1,360 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<head th:insert="common/includes/includes-inspirina::headFragment">
+</head>
+
+<title>GDM - Incidencias</title>
+<style>
+.modal-dialog{
+width: max-content !important;
+}
+</style>
+<!-- INSPIRINA -->
+<script src="js/app/comentarios.js"></script>
+<script src="js/app/general.js"></script>
+<script src="js/app/dycec_js.js"></script>
+<script type="text/javascript">
+
+
+		
+$( document ).ready(function() {
+	//incidencias.s_contextPath = "${pageContext.request.contextPath}";
+});
+		
+</script>
+</head>
+
+<!-- BODY -->
+<body class="fixed-sidebar fixed-nav md-skin pace-done" landing-scrollspy id="page-top">
+
+	<div class="pace pace-inactive">
+		<div class="pace-progress" data-progress-text="100%" data-progress="99"
+			style="transform: translate3d(100%, 0px, 0px);">
+			<div class="pace-progress-inner"></div>
+		</div>
+		<div class="pace-activity"></div>
+	</div>
+
+
+	<div id="wrapper"
+		th:insert="common/menus/menu-lateral::menuLateralFragment">
+		<!-- MENU - LATERAL -->
+	</div>
+
+		<!-- PAGE WRAPPER -->
+	<div id="page-wrapper" class="gray-bg">
+
+
+�			<nav th:insert="common/menus/menu-superior::menuSuperiorFragment">
+			</nav>
+			<!-- FIN NAV BAR -->
+			<!-- WRAPPER CONTENT -->
+			<div class="wrapper wrapper-content animated fadeInRight">
+
+				<!-- ROW -->
+				<div class="row">
+					<div class="col-lg-12">
+
+						<!-- CAJA TABLA -->
+						<div class="ibox float-e-margins">
+
+							<!-- TITULO TABLA -->
+							<div class="ibox-title">
+								<h5>
+									Filtros de busqueda de comentarios.
+								</h5>
+							</div>
+							<!-- FIN TITULO TABLA -->
+							<!-- CONTENIDO -->
+							<div class="ibox-content" style="min-height: 130px;">
+								<div class="row">
+									<form method="get" action="incidencias">
+										<div class="col-lg-3">
+
+											<div class="form-group ">
+												<label>Nº incidencia</label>
+											
+												<div class="input-group">
+												 <input type="text"
+													id="numincidenciaBuscador" placeholder="Nº de incidencia"
+													class="form-control" name="numIncidencia">
+													<span class="input-group-addon"><span class="glyphicon glyphicon-remove" th:onclick="|$('#numincidenciaBuscador').val('')|"></span></span>
+											</div>
+											</div>
+										</div>
+										<div class="col-lg-3">
+											<div class="form-group">
+												<label>Tipo</label> <select id="tipoBuscador"
+													class="form-control m-b" name="tpoIndicendia"
+													required="true">
+													<option>RSS</option>
+													<option>TI</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="col-lg-6 form-group"
+												style="margin-top: 25px !important">
+												<div class="col-lg-5 form-group">
+													<button type="button"
+														class="btn btn-w-m btn-success btn-sm"
+														style="margin-left: 0px !important; min-width: 90px !important"
+														th:onclick="comentarios.buscarIncidencias('${pageContext.request.contextPath}')">Buscar</button>
+												</div>
+												<div class="col-lg-2 form-group">												
+												</div>
+
+												<div class="col-lg-2 form-group">
+													
+												</div>
+											</div>
+
+										</div>
+
+									</form>
+								</div>
+							</div>
+						</div>
+
+						<div class="ibox float-e-margins">
+
+							<div class="ibox float-e-margins">
+								<!-- TITULO TABLA -->
+								<div class="ibox-title">
+									<h5>Listado de comentarios</h5>
+								</div>
+								<!-- FIN TITULO TABLA -->
+
+								<!-- CONTENIDO -->
+								<div class="ibox-content">
+									<!-- TABLA -->
+								
+									<table id="tabla_comentarios"
+										class="nowrap table table-striped table-bordered table-hover"
+										width="100%" cellspacing="0">
+										<!-- Ok, scroll horizontal -->
+										<!-- <thead>...<thead>  Los datos del thead los creamos por javascript en DataTable(){columns:...} -->
+										<!-- <tbody>...</tbody> Los datos del tbody los pasamos por AJAX -->
+									</table>
+									<!-- <table id="id_datatable" style="width: 100%;"> -->
+									<!-- FIN TABLA -->
+								</div>
+								<!-- <div class="ibox-content"> -->
+								<!-- FIN CONTENIDO -->
+							</div>
+						</div>
+					<!-- FIN CONTENIDO -->
+					</div>
+					<!-- FIN CAJA TABLA -->
+				</div>
+			</div>
+		</div>
+			
+			<!-- FIN ROW -->
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- AIM ventana emergente informacion relevante -->
+					<div class="ibox float-e-margins" style="display: none">
+
+						<!-- TITULO TABLA -->
+						<!-- FIN TITULO TABLA -->
+						<!-- CONTENIDO -->
+						<div id="informacionRelevante">
+							<div class="modal-body">
+								<label>Alias</label> <input type="text" maxlenght="50"
+									placeholder="50 caracteres máximo" id="alias"
+									class="form-control"> <label>Servicio afectado</label>
+								<input type="text" placeholder="" id="servicioafectado"
+									class="form-control" name="text"> <label>Causa</label>
+								<input type="text" placeholder="" id="causa"
+									class="form-control" name="text"> <label>Acciones de recuperación</label>
+								<textarea placeholder="A rellenar (2000 caracteres)"
+									class="form-control" id="accionesrecuperacion" name="text"></textarea>
+								<label>Acciones de mejora y responsables</label>
+								<textarea placeholder="A rellenar (2000 caracteres)"
+									class="form-control" id="accionesmejora" name="text"></textarea>
+								<label>Contacto</label> <input placeholder="A rellenar, Nombre y apellidos"
+									class="form-control" id="contacto" name="text"></input> <label>Area</label>
+								<input type="text" placeholder="A rellenar, Gerencia"
+									class="form-control" id="area" name="text"></input>
+							</div>
+						</div>
+						<!-- FIN CAJA TABLA -->
+					</div>
+				</div>
+		</div>
+		<!-- FIN WRAPPER CONTENT -->
+	</div>
+	<!-- PAGE WRAPPER -->
+
+
+	<!-- FIN WRAPPER -->
+
+
+<!-- JS -->
+<script type="text/javascript">
+	// Document Ready
+	$(document).ready(function() {
+
+	});
+
+	// VALIDAR FORMULARIO
+	/* 	function validarFormulario() {
+	
+	 var matriculaLen = $('#idMatricula').val().length;
+	 var nombreLen = $('#idNombre').val().length;
+	 var apellidosLen = $('#idApellidos').val().length;
+	 var rolesLen = $("input:checkbox[name=roles]:checked").length;
+	
+	 // Si el formulario está relleno entero
+	 if (matriculaLen != 0 && nombreLen != 0 && apellidosLen != 0 && rolesLen ){
+	
+	 // traza
+	 // alert("matricula: " + matriculaLen + "\n nombrLeeLen: "+ nombreLen + "\n apellidosLen: "+ apellidosLen + "\n rolesLen: "+ rolesLen);
+	
+	 // lanzamos el formulario por ajax
+	 enviarForumlario();
+	
+	 } else {
+	 alert("Debe rellenar los datos del alta");
+	 }
+	 } */
+
+	// ENVIAR FORMULARIO
+	/* function enviarForumlario () {
+		
+		var matriculaUsu = $('#idMatricula').val();
+		var nombreUsu = $('#idNombre').val();
+		var apellidosUsu = $('#idApellidos').val();
+		
+		var roles = $("input:checkbox[name=roles]:checked");
+		
+		var longitudRoles = roles.length;
+		
+		var rolesUsu = new Array(); 
+		
+		// traza
+		//alert('matricula: ' + matriculaUsu + '\n' + 'nombre: ' + nombreUsu + '\n' + 'apellidos: ' + apellidosUsu + '\n' + '\n' + 'roles: ' + roles + '\n' + 'lon: ' + longitudRoles)
+		
+		
+		
+	
+		 for (i=0; i < longitudRoles; i++) {
+			rolesUsu[i] = {
+				codRol: roles[i].value
+			};
+		}
+		
+		// montamos el objeto
+	  	var datosUsuario = {
+	  		matricula: matriculaUsu,
+	  		nombre: nombreUsu,
+	  		apellidos: apellidosUsu,
+	  		roles: rolesUsu
+		}; 
+		
+		var datosUsuario = encodeURIComponent(JSON.stringify(datosUsuario));
+		
+		// traza
+		//console.log(datosUsuario);
+		//alert(datosUsuario);
+		
+		// llamada Ajax
+	 	$.ajax({
+			methord: "post",
+			data: "datosUsuario="+ datosUsuario,
+			contentType: "application/json; charset=ISO-8859-1",
+			url: "admin-ajax",
+			dataType: "json",
+			success: function (respuesta) {
+				alert("Todo Ok: " + respuesta);
+				
+			 	//$('#idRegistro').delay(1000).fadeOut();
+				
+				//$('#idInfo').delay(2000).fadeIn(); 
+				
+			},
+			error: function (xhr,textStatus,err) {
+				alert ("Error inesperado: " + err.msg + "\n Vuelva a intentarlo de nuevo. Si el error persiste póngase en contacto con el administrador")
+				console.log(err.msg);
+			}
+		}); // fin ajax 
+			
+	}
+	 */
+</script>
+<!-- FIN JS -->
+
+
+
+
+
+
+
+		<%-- <body>
+
+	<!-- HEADER - MENÚ SUPERIOR -->
+	<!-- Hay que meter la clase separador-header porque al hacer un include el contenido va en él no deja margen hacia el contenedor -->
+	<div id="ideSeparadorHeader">
+		<jsp:include page="common/menus/menu-superior.jsp" />
+	</div>
+	<!-- FIN HEADER -->
+
+	<!-- MENÚ LATERAL -->
+	<jsp:include page="common/menus/menu-lateral.jsp" />
+	<!-- FIN MENU LATERAL -->
+
+
+	<!-- CONTENT - Zona de todo el contenido, sin contar con los menús -->
+	<div class="content">
+
+		<!-- WRAPPER -->
+		<div id="pad-wrapper">
+
+			<!-- SECCIÓN TÍTULO -->
+			<div class="section">
+			
+				<h4 class="title">BIENVENIDO</h4>
+				
+			</div>
+			<!-- FIN SECCIÓN TÍTULO -->
+
+		</div>
+		<!-- FIN WRAPPER -->
+
+	</div>
+	<!-- FIN CONTENT -->
+
+
+	<!-- ************************************* -->
+	<!-- SCRIPT CARGAR PAGINA -->
+	<script type="text/javascript">
+		// DOCUMENT READY - $(document).ready(function() - Lo que llamemos aquí se ejecuta al cargar la página HTML
+		$(function() {
+
+			// Cambiamos nombre de la página
+			setTitle("INICIO"); // esta función está en jsp>common>menus>menu-lateral.jsp
+
+			// Resaltamos y ponemos flecha de la página en la que estamos en el menú lateral 
+			$("#idMenuHome").addClass("active");
+			$("#idMenuHome")
+					.prepend(
+							"<div class=\"pointer\"><div class=\"arrow\"></div><div class=\"arrow_border\"></div></div>");
+
+		});
+		// FIN DOCUMENT READY
+	</script>
+	<!-- FIN SCRIPT CARGAR PAGINA -->
+	<!-- ************************************* -->
+
+</body>
+
+
+
+</body>
+<!-- BODY -->
+
+</html>

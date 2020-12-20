@@ -1,0 +1,167 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<title>GDM - Incidencias</title>
+
+<style>
+.modal-dialog {
+	width: max-content !important;
+}
+</style>
+</head>
+<!-- INSPIRINA -->
+<head th:insert="common/includes/includes-inspirina::headFragment"></head>
+<head>
+<script src="js/app/incidencias.js"></script>
+<script src="js/app/general.js"></script>
+<script src="js/app/dycec_js.js"></script>
+<script type="text/javascript">	
+var semMax = "[[${session.max_semana}]]";
+var mesMax = "[[${session.max_mes}]]";
+var urlTotal ="[[${#httpServletRequest.requestURL}]]".replace("incidencias","");
+$( document ).ready(function() {
+	incidencias.s_contextPath = "${pageContext.request.contextPath}";
+});	
+</script>
+</head>
+
+<!-- BODY -->
+<body class="fixed-sidebar fixed-nav md-skin pace-done" id="page-top">
+
+	
+
+	<!-- WRAPPER -->
+	<div id="wrapper"
+		th:insert="common/menus/menu-lateral::menuLateralFragment">
+		<!-- MENU - LATERAL -->
+	</div>
+
+	<div id="page-wrapper" class="gray-bg">
+		<nav th:insert="common/menus/menu-superior::menuSuperiorFragment">
+		</nav>
+
+		<div class="wrapper wrapper-content animated fadeInRight">
+
+			<!-- ROW -->
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- CAJA TABLA -->
+					<div class="ibox float-e-margins">
+						<!-- TITULO TABLA -->
+						<div class="ibox-title">
+							<h5>Filtros de busqueda de incidencias relevantes.</h5>
+						</div>
+						<!-- FIN TITULO TABLA -->
+						<!-- CONTENIDO -->
+						<div class="ibox-content" style="min-height: 130px;">
+							<div class="row">
+								<form method="get" action="/incidencias">
+									<div class="col-lg-3">
+
+										<div class="form-group ">
+											<label>Nº incidencia</label>
+
+											<div class="input-group">
+												<input type="text" id="numincidenciaBuscador"
+													placeholder="Nº de incidencia" class="form-control"
+													name="numIncidencia"> <span
+													class="input-group-addon"><span
+													class="glyphicon glyphicon-remove"
+													th:onclick="|$('#numincidenciaBuscador').val('')|"></span></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-3">
+										<div class="form-group">
+											<label>Tipo</label>
+											 <select id="tipoBuscador"
+												class="form-control m-b" name="tpoIndicendia"
+												required="true">
+												<option>RSS</option>
+												<option>TI</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="col-lg-6 form-group" style="margin-top: 25px !important">
+											<div class="col-lg-5 form-group">
+												<button type="button" class="btn btn-w-m btn-success btn-sm"
+													style="margin-left: 0px !important; min-width: 90px !important"
+													th:onclick="|incidencias.buscarIncidencias('null')|">
+													Buscar</button>
+											</div>
+											<div class="col-lg-2 form-group"></div>
+											<div class="col-lg-2 form-group"></div>
+										</div>
+
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="ibox float-e-margins">
+
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>Listado de Incidencias</h5>
+							</div>
+							<div class="ibox-content">
+								<!-- TABLA -->
+								<table id="tabla_incidencias"
+									class="nowrap table table-striped table-bordered table-hover"
+									width="100%" cellspacing="0">
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- FIN CONTENIDO -->
+				</div>
+				<!-- FIN CAJA TABLA -->
+			</div>
+		</div>
+	</div>
+		<!-- FIN ROW -->
+		<div class="row">
+			<div class="col-lg-12">
+				<!-- AIM ventana emergente informacion relevante -->
+				<div class="ibox float-e-margins" style="display: none">
+
+					<!-- TITULO TABLA -->
+					<!-- FIN TITULO TABLA -->
+					<!-- CONTENIDO -->
+					<div id="informacionRelevante">
+						<div class="modal-body">
+							<label>Alias</label> <input type="text" maxlenght="50"
+								placeholder="50 caracteres máximo" id="alias"
+								class="form-control"> <label>Servicio afectado</label> <input
+								type="text" placeholder="" id="servicioafectado"
+								class="form-control" name="text"> <label>Causa</label> <input
+								type="text" placeholder="" id="causa" class="form-control"
+								name="text"> <label>Acciones de recuperación</label>
+							<textarea placeholder="A rellenar (2000 caracteres)"
+								class="form-control" id="accionesrecuperacion" name="text"></textarea>
+							<label>Acciones de mejora y responsables</label>
+							<textarea placeholder="A rellenar (2000 caracteres)"
+								class="form-control" id="accionesmejora" name="text"></textarea>
+							<label>Contacto</label> <input
+								placeholder="A rellenar, Nombre y apellidos"
+								class="form-control" id="contacto" name="text"></input> <label>Area</label>
+							<input type="text" placeholder="A rellenar, Gerencia"
+								class="form-control" id="area" name="text"></input>
+						</div>
+					</div>
+					<!-- FIN CAJA TABLA -->
+				</div>
+			</div>
+		</div>
+		<!-- FIN WRAPPER CONTENT -->
+
+</body>
+<!-- BODY -->
+
+</html>

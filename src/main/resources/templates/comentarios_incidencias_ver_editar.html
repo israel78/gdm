@@ -1,0 +1,137 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div class="row" th:fragment="verEditarComentariosIncidencias">
+	<div class="col-lg-12">
+
+		<!-- CAJA TABLA -->
+		<div class="ibox float-e-margins">
+
+			<!-- TITULO TABLA -->
+			<div class="ibox-title">
+				<h5 id="tituloTabDetallec">Actualizar descripcion de incidencia destacada</h5>
+			</div>
+			<!-- FIN TITULO TABLA -->
+			<!-- CONTENIDO -->
+			<div class="ibox-content" style="min-height: 130px;">
+				<div class="row col-lg-12">
+					<div id="capaIdc" class="col-lg-4 form-group">
+							<label class="col-lg-5" id="id_accion_label">Id Comité</label> 
+							<div class="col-lg-7">
+								<input 
+									disabled="disabled" id="id_comitec" class="form-control"
+									type="text" size="16" value="">
+							</div>
+					</div>
+					<div id="idincidenciac" class="col-lg-4 form-group">
+							<label class="col-lg-5" id="id_incidencia">Num. Incidencia</label> 
+							<div class="col-lg-7">
+								<input 
+									id="id_incidenciac" class="form-control"
+									type="text" size="16" value="">
+							</div>
+					</div>
+					<div id="num_periodoc" class="col-lg-4 form-group">
+							<label class="col-lg-5" id="n_periodo">Nº periodo</label> 
+							<div class="col-lg-7">
+								<input 
+									disabled="disabled" id="num_peric" class="form-control"
+									type="text" size="16" value="">
+							</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4" id="tipo_periodoc">
+							<label class="col-lg-5">Tipo periodo</label>
+							<div class="col-lg-7">
+							<input type="text"  class="form-control m-b " disabled="disabled"
+								name="tipoCo" id="tipopc"  maxlength="20"
+								placeholder=""/>
+							</div>
+					</div>
+					<div class="col-lg-4" id="fechac">
+							<label class="col-lg-5">Fecha</label>
+								<div class="col-lg-7">
+								<input type="text"  class="form-control m-b" disabled="disabled"
+									name="tipoCo" id="fechacc"  maxlength="20"
+									placeholder=""/>
+							</div>
+					</div>			
+				</div>
+				
+			
+				<div class="row">
+					<div class="col-lg-12" id="alias" >
+							<label>Alias</label>
+								<textarea  class="form-control m-b" 
+									name="tipoCo" id="aliasC" rows="2" maxlength="200"
+									placeholder="A rellenar (200 caracteres max.)">
+								</textarea>
+					</div>		
+					<div class="col-lg-12" id="descripman">
+							<label>Descripcion manual</label>
+							<textarea id="descripcionMnanualc" class="form-control m-b"
+								name="tpoIndicendia" rows="8" maxlength="1500"
+								placeholder="A rellenar (1500 caracteres max.)">
+							</textarea>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group" id="autorc">
+							<label>Autor</label>
+							<div >
+							<input placeholder="" disabled="disabled"
+								type="text"
+								id="autorrc" maxlength="150" class="form-control"
+								name="text"/>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="form-group" id="timestampc">
+							<label>Timestamp</label> <input  class="form-control" id="timesc" disabled="disabled"
+								placeholder="" type="text" maxlength="100"
+								size="100" value="">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<!--AIM NUMERO DE FILA A ACTUALIZAR -->
+						<input id="hiddenNumFila" style="display: none"
+							class="form-control m-b" value=""> <input
+							id="fechaSemana" style="display: none" class="form-control m-b"
+							value="">
+					</div>
+					<div class="col-lg-8">
+						<div class="col-lg-12 form-group"
+							style="margin-top: 25px !important">
+							<button type="button" class="btn btn-w-m btn-info btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|comentarios.volverAlistado('null')|">Volver</button>
+							<button type="button" id="botonBorrarCamposc"
+								class="btn btn-w-m btn-success btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|comentarios.borrarCamposEditablesIncidencia('null')|">Borrar
+								campos</button>
+							<button type="button" id="botonAnnadirc"
+								class="btn btn-w-m btn-success btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|comentarios.insertarActualizarAccionRelevanteIncidencia()|">Añadir</button>
+							<button type="button" id="botonBorrarRegistroc"
+								class="btn btn-w-m btn-danger btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|comentarios.borrarAccionIncidencia(null)|">Borrar</button>
+							<button type="button" class="btn btn-w-m btn-success btn-sm"
+								id="botonActualizarc"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|comentarios.insertarActualizarAccionRelevanteIncidencia()|">Actualizar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- FIN CONTENIDO -->
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:insert="common/includes/includes-inspirina::headFragment"></head>
+<head>
+<title>GDM - Login</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+</head>
+
+<!-- BODY -->
+<body class="fixed-sidebar fixed-nav md-skin gray-bg pace-done" landing-scrollspy id="page-top">
+
+	<div class="pace pace-inactive">
+		<div class="pace-progress" data-progress-text="100%" data-progress="99"
+			style="transform: translate3d(100%, 0px, 0px);">
+			<div class="pace-progress-inner"></div>
+		</div>
+		<div class="pace-activity"></div>
+	</div>
+
+	<div ui-view>
+		<div class="loginColumns animated fadeInDown">
+			<div class="row">
+
+				<div class="col-md-6 col-md-offset-3">
+
+					<h2 class="font-bold">LOGIN</h2>
+
+					<div class="ibox-content">
+						<form role="form" action="#" th:action="@{/login}" th:object="${usuario}"  method="post" enctype="multipart/form-data">
+
+							<!-- USERNAME -->
+							<div class="form-group">
+								<input name="username" type="text" th:field="*{matricula}" class="form-control" placeholder="Username" required="">
+							</div>
+							<!-- FIN USERNAME -->
+
+							<!-- PASSWORD -->
+							<div class="form-group">
+								<input name="password" type="password" th:field="*{password}" class="form-control" placeholder="Password" required="">
+							</div>
+							<!-- FIN PASSWORD -->
+
+							<!-- ENVIAR -->
+							<button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+							
+							<!-- FIN ENVIAR -->
+
+						</form>
+					</div>
+				</div>
+
+			</div>
+
+			<hr>
+
+			<div class="row">
+				<div class="col-md-6">GDM app</div>
+				<div class="col-md-12 text-right">
+					<small>© 2019 - 2020</small>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+</body>
+<!-- FIN BODY -->
+
+</html>

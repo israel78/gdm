@@ -1,0 +1,107 @@
+2020-01-09 15:04:14.818  INFO 3404 --- [restartedMain] n.j.springboot.tutorial.Application      : Starting Application on DESKTOP-BKKU2KF with PID 3404 (C:\REPOSITORIO_UBUNTU\PLANTILLA\plantillaSpringBoot\trunk\springboot-thymeleaf-crud-tutorial-master\target\classes started by israe in C:\REPOSITORIO_UBUNTU\PLANTILLA\plantillaSpringBoot\trunk\springboot-thymeleaf-crud-tutorial-master)
+2020-01-09 15:04:14.819 DEBUG 3404 --- [restartedMain] n.j.springboot.tutorial.Application      : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2020-01-09 15:04:14.819  INFO 3404 --- [restartedMain] n.j.springboot.tutorial.Application      : The following profiles are active: prod
+2020-01-09 15:04:15.183  INFO 3404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-09 15:04:15.193  INFO 3404 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 repository interfaces.
+2020-01-09 15:04:15.255  INFO 3404 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$36e07561] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-09 15:04:15.347  INFO 3404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-01-09 15:04:15.348  INFO 3404 --- [restartedMain] o.apache.catalina.core.StandardService   : Arrancando servicio [Tomcat]
+2020-01-09 15:04:15.349  INFO 3404 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-01-09 15:04:15.388  INFO 3404 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2020-01-09 15:04:15.388  INFO 3404 --- [restartedMain] o.a.c.c.C.[.[localhost].[/springboot]    : Initializing Spring embedded WebApplicationContext
+2020-01-09 15:04:15.388  INFO 3404 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 566 ms
+2020-01-09 15:04:15.436  INFO 3404 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-01-09 15:04:15.437  INFO 3404 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-01-09 15:04:15.445  INFO 3404 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-09 15:04:15.454  INFO 3404 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-01-09 15:04:15.489  INFO 3404 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@31a027d4'
+2020-01-09 15:04:15.489  INFO 3404 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-09 15:04:15.513  INFO 3404 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-01-09 15:04:15.623  INFO 3404 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-09 15:04:15.629  WARN 3404 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-09 15:04:15.670  INFO 3404 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-01-09 15:04:15.725  INFO 3404 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/springboot'
+2020-01-09 15:04:15.726  INFO 3404 --- [restartedMain] n.j.springboot.tutorial.Application      : Started Application in 0.956 seconds (JVM running for 65.364)
+2020-01-09 15:04:15.729  INFO 3404 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-01-09 15:04:24.321  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2020-01-09 15:04:24.324  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-09 15:04:24.325  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-01-09 15:04:24.325  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-01-09 15:04:24.331  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2020-01-09 15:04:24.331  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-01-09 15:04:24.335  INFO 3404 --- [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-01-09 15:04:30.278  INFO 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : Starting Application on DESKTOP-BKKU2KF with PID 6340 (C:\REPOSITORIO_UBUNTU\PLANTILLA\plantillaSpringBoot\trunk\springboot-thymeleaf-crud-tutorial-master\target\classes started by israe in C:\REPOSITORIO_UBUNTU\PLANTILLA\plantillaSpringBoot\trunk\springboot-thymeleaf-crud-tutorial-master)
+2020-01-09 15:04:30.280 DEBUG 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2020-01-09 15:04:30.281  INFO 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : The following profiles are active: prod
+2020-01-09 15:04:30.319  INFO 6340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-01-09 15:04:30.319  INFO 6340 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-01-09 15:04:30.988  INFO 6340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-09 15:04:31.044  INFO 6340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 1 repository interfaces.
+2020-01-09 15:04:31.368  INFO 6340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf8b2350] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-09 15:04:31.661  INFO 6340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-01-09 15:04:31.682  INFO 6340 --- [restartedMain] o.apache.catalina.core.StandardService   : Arrancando servicio [Tomcat]
+2020-01-09 15:04:31.682  INFO 6340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-01-09 15:04:31.854  INFO 6340 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2020-01-09 15:04:31.858  INFO 6340 --- [restartedMain] o.a.c.c.C.[.[localhost].[/springboot]    : Initializing Spring embedded WebApplicationContext
+2020-01-09 15:04:31.858  INFO 6340 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1539 ms
+2020-01-09 15:04:31.995  INFO 6340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-01-09 15:04:32.149  INFO 6340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-01-09 15:04:32.199  INFO 6340 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-09 15:04:32.258  INFO 6340 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2020-01-09 15:04:32.260  INFO 6340 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2020-01-09 15:04:32.375  INFO 6340 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-01-09 15:04:32.493  INFO 6340 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-01-09 15:04:33.052  INFO 6340 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2867f388'
+2020-01-09 15:04:33.055  INFO 6340 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-09 15:04:33.092  INFO 6340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-01-09 15:04:33.562  INFO 6340 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-09 15:04:33.597  WARN 6340 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-09 15:04:33.695  INFO 6340 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-01-09 15:04:33.814  INFO 6340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/springboot'
+2020-01-09 15:04:33.816  INFO 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : Started Application in 3.955 seconds (JVM running for 4.689)
+2020-01-09 15:06:43.055  INFO 6340 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-09 15:06:43.056  INFO 6340 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-01-09 15:06:43.056  INFO 6340 --- [Thread-6] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-01-09 15:06:43.066  INFO 6340 --- [Thread-6] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2020-01-09 15:06:43.066  INFO 6340 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-01-09 15:06:43.067  INFO 6340 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-01-09 15:06:43.317  INFO 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : Starting Application on DESKTOP-BKKU2KF with PID 6340 (C:\REPOSITORIO_UBUNTU\PLANTILLA\plantillaSpringBoot\trunk\springboot-thymeleaf-crud-tutorial-master\target\classes started by israe in C:\REPOSITORIO_UBUNTU\PLANTILLA\plantillaSpringBoot\trunk\springboot-thymeleaf-crud-tutorial-master)
+2020-01-09 15:06:43.317 DEBUG 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2020-01-09 15:06:43.317  INFO 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : The following profiles are active: prod
+2020-01-09 15:06:43.562  INFO 6340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-09 15:06:43.570  INFO 6340 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8ms. Found 1 repository interfaces.
+2020-01-09 15:06:43.618  INFO 6340 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf8b2350] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-09 15:06:43.711  INFO 6340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-01-09 15:06:43.712  INFO 6340 --- [restartedMain] o.apache.catalina.core.StandardService   : Arrancando servicio [Tomcat]
+2020-01-09 15:06:43.712  INFO 6340 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-01-09 15:06:43.753  INFO 6340 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2020-01-09 15:06:43.754  INFO 6340 --- [restartedMain] o.a.c.c.C.[.[localhost].[/springboot]    : Initializing Spring embedded WebApplicationContext
+2020-01-09 15:06:43.754  INFO 6340 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 434 ms
+2020-01-09 15:06:43.798  INFO 6340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-01-09 15:06:43.800  INFO 6340 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-01-09 15:06:43.806  INFO 6340 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-01-09 15:06:43.813  INFO 6340 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-01-09 15:06:43.845  INFO 6340 --- [restartedMain] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2867f388'
+2020-01-09 15:06:43.845  INFO 6340 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-01-09 15:06:43.858  INFO 6340 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-01-09 15:06:43.952  INFO 6340 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-09 15:06:43.957  WARN 6340 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-01-09 15:06:43.997  INFO 6340 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-01-09 15:06:44.048  INFO 6340 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/springboot'
+2020-01-09 15:06:44.048  INFO 6340 --- [restartedMain] n.j.springboot.tutorial.Application      : Started Application in 0.765 seconds (JVM running for 134.92)
+2020-01-09 15:06:44.051  INFO 6340 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-01-09 15:07:19.653  INFO 6340 --- [Thread-16] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-09 15:07:19.654  INFO 6340 --- [Thread-16] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-01-09 15:07:19.654  INFO 6340 --- [Thread-16] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-01-09 15:07:19.659  INFO 6340 --- [Thread-16] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-199]
+2020-01-09 15:07:19.659  INFO 6340 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-01-09 15:07:19.661  INFO 6340 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.

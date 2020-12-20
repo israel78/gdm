@@ -1,0 +1,251 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<div class="row" th:fragment="verEditarAccionesRelevantes">
+	<div class="col-lg-12">
+
+		<!-- CAJA TABLA -->
+		<div class="ibox float-e-margins">
+
+			<!-- TITULO TABLA -->
+			<div class="ibox-title">
+				<h5 id="tituloTabDetalle">actualizar Accion relevante</h5>
+			</div>
+			<!-- FIN TITULO TABLA -->
+			<!-- CONTENIDO -->
+			<div class="ibox-content" style="min-height: 130px;">
+				<div class="row">
+					<div id="capaId" class="col-lg-2">
+						<div class="form-group">
+							<label id="id_accion_label">Id accion relevante</label> <input
+								disabled="disabled" id="id_accion" class="form-control"
+								type="text" size="16" value="">
+						</div>
+					</div>
+					<div id="capaIdcomite" class="col-lg-2">
+						<div class="form-group">
+							<label id="id_comite">Id comité</label> <input
+								disabled="disabled" id="idcomite" class="form-control"
+								type="text" size="16" value="">
+						</div>
+					</div>
+					<div id="capaindex" class="col-lg-2">
+						<div class="form-group">
+							<label id="inde">Index</label><input
+								disabled="disabled" id="index" class="form-control"
+								type="text" size="16" value="">
+						</div>
+					</div>
+					<div id="capaaniocdm" class="col-lg-2">
+						<div class="form-group">
+							<label id="annioCdm">Año CDM</label> <input
+								disabled="disabled" id="anocdm" class="form-control"
+								type="text" size="16" value="">
+						</div>
+					</div>
+					<div id="capasemana" class="col-lg-2">
+						<div class="form-group">
+							<label id="annioCdm">Semana</label> <input
+								disabled="disabled" id="semana" class="form-control"
+								type="text" size="16" value="">
+						</div>
+					</div>
+					<div id="capafechacdm" class="col-lg-2">
+						<div class="form-group">
+							<label id="annioCdm">Fecha CDM</label> <input
+								disabled="disabled" id="fechacdm" class="form-control"
+								type="text" size="16" value="">
+						</div>
+					</div>
+					<div class="col-lg-7">
+						<div class="form-group">
+							<label>Titulo</label>
+							<textarea id="titulo" maxlength="500" rows="4" cols="75"
+								placeholder="A rellenar (500 caracteres max.)"
+								class="form-control m-b" name="tpoIndicendia"
+								onchange="accionesRelevantes.cambioSelectorTipo()"></textarea>
+
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="form-group">
+							<label>Tipo</label> <select id="tipoBuscador2"
+								class="form-control m-b" name="tipoBuscador2"
+								onchange="accionesRelevantes.cambioSelectorTipo2()">
+								<option>RS</option>
+								<option>TI</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-lg-3">
+						<div class="form-group">
+							<label>Subtipo</label> <select id="subtipoBuscador2"
+								class="form-control m-b" name="tpoIndicendia">
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="form-group">
+							<label>Fecha inicio</label>
+							<div class="input-group date form_datetime col-lg-12"
+								id="fechaInicioVer" data-link-field="dtp_input1"
+								data-date="2019-12-16T05:25:07Z">
+								<input class="form-control" value="" type="text"> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-remove"></span></span> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-th"></span></span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group">
+							<label>Fecha fin</label>
+							<div class="input-group date form_datetime col-lg-12"
+								id="fechaFinVer" data-link-field="dtp_input2"
+								data-date="2019-12-16T05:25:07Z">
+								<input class="form-control" type="text" size="16" value="">
+								<span class="input-group-addon"><span
+									class="glyphicon glyphicon-remove"></span></span> <span
+									class="input-group-addon"><span
+									class="glyphicon glyphicon-th"></span></span>
+							</div>
+						</div>
+
+					</div>
+					<div class="col-lg-2">
+						<div class="form-group">
+							<label>Impacto</label> <select id="impacto" 
+								class="form-control m-b" name="tpoIndicendia"
+								th:onchange="|accionesRelevantes.cambioSelectorTipo()|">
+								<option>SI</option>
+								<option>NO</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Motivo</label>
+							<textarea id="motivo" class="form-control m-b"
+								name="tpoIndicendia" rows="2" maxlength="500"
+								placeholder="A rellenar (500 caracteres max.)">
+							</textarea>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Código BTP/CRQ</label>
+							<textarea id="codigo" rows="4" maxlength="2000"
+								placeholder="A rellenar (2000 caracteres max.)"
+								class="form-control m-b" name="tpoIndicendia"
+								th:onchange="|accionesRelevantes.cambioSelectorTipo()|"></textarea>
+						</div>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Descripción</label>
+							<textarea placeholder="A rellenar (2000 caracteres max.)"
+								rows="4"
+								id="descripcion" maxlength="2000" class="form-control"
+								name="text"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Promotor</label> <input id="promotor" class="form-control"
+								placeholder="A rellenar (100 caracteres max.)" type="text" maxlength="100"
+								size="100" value="">
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Unidad ejecutora</label> <input id="unidad_ejecutora"
+								maxlength="150"
+								placeholder="A rellenar (150 caracteres max.)"
+								class="form-control" type="text" size="16" value="">
+						</div>
+					</div>
+
+
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Usuario contacto</label> <input id="contacto" class="form-control"
+								placeholder="A rellenar (100 caracteres max.)"
+								type="text" maxlength="100" value=""/>
+						</div>
+
+					</div>
+					<div class="col-lg-12">
+						<div class="form-group">
+							<label>Area</label> <input id="area" class="form-control"
+								placeholder="A rellenar (100 caracteres max.)" 
+								type="text"  maxlength="100"  >
+						</div>
+
+					</div>
+					<div  id="capaautor" class="col-lg-4">
+						<div class="form-group">
+							<label>Autor</label>
+							 <input id="autor" class="form-control" disabled="disabled"
+								placeholder="" 
+								type="text"  maxlength="100"  >
+						</div>
+
+					</div>
+					<div id="capatimestamp" class="col-lg-3">
+						<div class="form-group">
+							<label>Timestamp</label>
+							 <input id="titamp" class="form-control" disabled="disabled"
+								placeholder="" 
+								type="text"  maxlength="100"  >
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<!--AIM NUMERO DE FILA A ACTUALIZAR -->
+						<input id="hiddenNumFila" style="display: none"
+							class="form-control m-b" value=""> <input
+							id="fechaSemana" style="display: none" class="form-control m-b"
+							value="">
+					</div>
+					<div class="col-lg-8">
+						<div class="col-lg-12 form-group"
+							style="margin-top: 25px !important">
+							<button type="button" class="btn btn-w-m btn-info btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|accionesRelevantes.volverAlistado('null')|">Volver</button>
+							<button type="button" id="botonBorrarCampos"
+								class="btn btn-w-m btn-success btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|accionesRelevantes.borrarCamposEditables('null')|">Borrar
+								campos</button>
+							<button type="button" id="botonAnnadir"
+								class="btn btn-w-m btn-success btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|accionesRelevantes.insertarActualizarAccionRelevante()|">Añadir</button>
+							<button type="button" id="botonBorrarRegistro"
+								class="btn btn-w-m btn-danger btn-sm"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|accionesRelevantes.borrarAccion(null)|">Borrar</button>
+							<button type="button" class="btn btn-w-m btn-success btn-sm"
+								id="botonActualizar"
+								style="margin-left: 0px !important; min-width: 90px !important"
+								th:onclick="|accionesRelevantes.insertarActualizarAccionRelevante()|">Actualizar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- FIN CONTENIDO -->
+</html>
